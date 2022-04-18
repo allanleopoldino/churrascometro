@@ -20,12 +20,15 @@ function calc() {
     let beer = beerPP(time) * adult;
     let drink = drinkPP(time) * adult + (1000 / 2 * kid);
 
-    if (time <= 24) {
+    if (time < 12 || adult==0) {
         result.innerHTML = `<p>Carne: &nbsp&nbsp ${meat / 1000} Kg</p>`;
         result.innerHTML += `<p>Cerveja: ${beer / 1000}L (${Math.ceil(beer / 355)} Latas)</p>`;
         result.innerHTML += `<p>Bebidas: ${drink / 1000}L </p>`;
     } else {
-        result.innerHTML = `<p>${time} horas? Isso é um churrasco ou o que?<p>`;
+        result.innerHTML = `<p>Carne: &nbsp&nbsp ${meat / 1000} Kg</p>`;
+        result.innerHTML += `<p>Cerveja: ${beer / 1000}L (${Math.ceil(beer / 355)} Latas)</p>`;
+        result.innerHTML += `<p>Bebidas: ${drink / 1000}L </p>`;
+        result.innerHTML += `<br><p>Atenção ao consumo excessivo de álcool!<p>`;
     }
 }
 
